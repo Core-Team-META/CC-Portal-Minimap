@@ -146,7 +146,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Game ID"
-      String: "b537ef/screenshottesting"
+      String: ""
     }
     Overrides {
       Name: "bp:Screenshot Index"
@@ -227,11 +227,11 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:IsDevMode"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "cs:ScaleMultiplier"
-      Float: 1.7
+      Float: 1
     }
     Overrides {
       Name: "cs:CameraModeKeybind"
@@ -274,7 +274,6 @@ Objects {
     }
     Rotation {
       Pitch: -90
-      Yaw: 90
     }
     Scale {
       X: 1
@@ -439,7 +438,7 @@ Objects {
 }
 Objects {
   Id: 10751131997027176897
-  Name: "UI Container"
+  Name: "Minimap Container"
   Transform {
     Location {
       X: -3310
@@ -490,7 +489,7 @@ Objects {
 }
 Objects {
   Id: 16857789138200289770
-  Name: "UI Panel"
+  Name: "Minimap Panel"
   Transform {
     Location {
       X: -3310
@@ -507,7 +506,6 @@ Objects {
     }
   }
   ParentId: 10751131997027176897
-  ChildIds: 9821840035017938934
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -520,8 +518,8 @@ Objects {
   Control {
     Width: 500
     Height: 500
-    UIX: -250
-    UIY: 250
+    UIX: -305
+    UIY: 290
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -544,78 +542,6 @@ Objects {
   }
 }
 Objects {
-  Id: 9821840035017938934
-  Name: "UI Image"
-  Transform {
-    Location {
-      X: 1344.06934
-      Y: 9864.88184
-      Z: -5620
-    }
-    Rotation {
-      Yaw: 90.0000076
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 16857789138200289770
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 200
-    Height: 200
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    UseParentWidth: true
-    UseParentHeight: true
-    Image {
-      Brush {
-        Id: 3383784291228064846
-      }
-      Color {
-        R: 0.187142983
-        G: 0.786
-        A: 1
-      }
-      TeamSettings {
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-}
-Objects {
   Id: 4128134272904798547
   Name: "3D"
   Transform {
@@ -631,8 +557,8 @@ Objects {
   }
   ParentId: 17624674276828672061
   ChildIds: 2917400432279803725
-  ChildIds: 11632359337960696180
   ChildIds: 10179519834451388002
+  ChildIds: 11632359337960696180
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -644,6 +570,64 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+}
+Objects {
+  Id: 11632359337960696180
+  Name: "Plane 1m"
+  Transform {
+    Location {
+      Z: 11.9101563
+    }
+    Rotation {
+    }
+    Scale {
+      X: 50
+      Y: 108.820732
+      Z: 1
+    }
+  }
+  ParentId: 4128134272904798547
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 7319665013313339573
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 1
+        G: 0.191111207
+        B: 0.090000093
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16048367406070731799
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
   }
 }
 Objects {
@@ -696,58 +680,6 @@ Objects {
     }
     VerticalAlignment {
       Value: "mc:ecoretextverticalalign:center"
-    }
-  }
-}
-Objects {
-  Id: 11632359337960696180
-  Name: "Plane 1m"
-  Transform {
-    Location {
-      Z: 11.9101563
-    }
-    Rotation {
-    }
-    Scale {
-      X: 50
-      Y: 108.820732
-      Z: 1
-    }
-  }
-  ParentId: 4128134272904798547
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Tint"
-      Color {
-        R: 0.792035282
-        G: 1
-        B: 0.477876127
-        A: 1
-      }
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 16048367406070731799
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
     }
   }
 }
@@ -885,7 +817,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RotationAngle"
-      Float: -90
+      Float: 0
     }
     Overrides {
       Name: "cs:GradientHeight:tooltip"
@@ -924,6 +856,39 @@ Objects {
   Script {
     ScriptAsset {
       Id: 17612652577526348631
+    }
+  }
+}
+Objects {
+  Id: 1280845339199833804
+  Name: "Portal-MiniMap README"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2347622431939269791
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 12438744521844256054
     }
   }
 }

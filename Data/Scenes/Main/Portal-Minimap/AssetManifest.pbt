@@ -17,11 +17,11 @@ Assets {
   }
 }
 Assets {
-  Id: 3383784291228064846
-  Name: "Frame Outline Thin 001"
-  PlatformAssetType: 9
+  Id: 7319665013313339573
+  Name: "Terrain Grid Glow Topographical"
+  PlatformAssetType: 2
   PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameOutline_020"
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_terrain_grid_topographical_001_wa"
   }
 }

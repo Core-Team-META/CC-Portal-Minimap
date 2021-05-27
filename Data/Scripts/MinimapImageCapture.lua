@@ -21,13 +21,13 @@ if isDevMode then
         Minimap.context.GetBounds()
 
     function OnBindingPressed(player, keybind)
-        UIContainer.visibility = Visibility.FORCE_OFF
         local camViewWidth = SCREENSHOT_CAMERA.viewWidth
         if keybind == zoomCameraIn then
             SCREENSHOT_CAMERA.viewWidth = camViewWidth + (camViewWidth * 0.01)
         elseif keybind == zoomCameraOut then
             SCREENSHOT_CAMERA.viewWidth = camViewWidth - (camViewWidth * 0.01)
         elseif keybind == enterCameraMode then
+            UIContainer.visibility = Visibility.FORCE_OFF
             local xCenter = (boundsRight + boundsLeft) / 2
             local yCenter = (boundsBottom + boundsTop) / 2
             local zCenter = (boundsHigh + boundsLow) / 2

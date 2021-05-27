@@ -22,7 +22,7 @@ function SetPlayer(player)
 	CIRCLE_BG.isEnabled = (player == Game.GetLocalPlayer())
 	
 	-- Set player's initial name letter
-	NAME.text = "M" --string.sub(player.name, 1, 1) #FIXME
+	NAME.text = string.sub(player.name, 1, 1)
 	CIRCLE.rotationAngle = rotationOffset * -1
 
 	UpdateContent()

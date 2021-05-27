@@ -43,12 +43,3 @@ Assets {
     AssetId: "CORESKY_Sky"
   }
 }
-Assets {
-  Id: 2318906413348686768
-  Name: "Fantasy Castle Accessory Roof 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_ts_fan_cas_acc_roof_002"
-  }
-}

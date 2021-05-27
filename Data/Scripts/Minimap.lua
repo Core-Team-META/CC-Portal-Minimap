@@ -26,7 +26,7 @@ local BORDER_COLOR = script:GetCustomProperty("BorderColor")
 local BORDER_SIZE = script:GetCustomProperty("BorderSize")
 local ENABLE_SHAPES = script:GetCustomProperty("EnableShapes")
 local ENABLE_LABELS = script:GetCustomProperty("EnableLabels")
-local ROTATION_ANGLE = script:GetCustomProperty("RotationAngle")
+local ROTATION_ANGLE = script:GetCustomProperty("RotationAngle") - 90
 
 local worldShapes = ROOT:FindDescendantsByType("StaticMesh")
 local worldTexts = ROOT:FindDescendantsByType("WorldText")
@@ -44,8 +44,6 @@ local boundsTop = nil
 local boundsBottom = nil
 local boundsHigh = nil
 local boundsLow = nil
-
-
 
 for _,shape in ipairs(worldShapes) do
 	--shape.isEnabled = false 
@@ -79,6 +77,13 @@ end
 local boundsWidth = boundsRight - boundsLeft
 local boundsHeight = boundsBottom - boundsTop
 
+--[[print("L: "..tostring(boundsLeft))
+print("R: "..tostring(boundsRight))
+print("T: "..tostring(boundsTop))
+print("B: "..tostring(boundsBottom))
+print("W: "..tostring(boundsWidth))
+print("H: "..tostring(boundsHeight))]]
+
 -- Precompute coeficients
 local scaleX = MAP_PANEL.width / boundsWidth
 local scaleY = scaleX
@@ -100,8 +105,8 @@ function AddForShape(shape)
 	
 	local mapPiece = World.SpawnAsset(MAP_PIECE_TEMPLATE, {parent = MAP_PANEL})
 	
-	mapPiece.x = ((pos.x - boundsLeft) * scaleX) --+ (MAP_PANEL.width/2)
-	mapPiece.y = ((pos.y - boundsTop) * scaleY) --+ (MAP_PANEL.height/2)
+	mapPiece.x = ((pos.x) * scaleX) --+ (MAP_PANEL.width/2)
+	mapPiece.y = ((pos.y) * scaleY) --+ (MAP_PANEL.height/2)
 	local w = size.x * scaleX
 	local h = size.y * scaleY
 	mapPiece.width = CoreMath.Round(w)
@@ -151,8 +156,8 @@ if ENABLE_LABELS then
 		
 		label.anchor = UIPivot.BOTTOM_CENTER
 
-		label.x = (pos.x - boundsLeft) * scaleX
-		label.y = (pos.y - boundsTop) * scaleY
+		label.x = (pos.x) * scaleX
+		label.y = (pos.y) * scaleY
 		label.rotationAngle = ROTATION_ANGLE * -1
 
 		label.fontSize = size.z * scaleLabels
@@ -174,8 +179,8 @@ function Tick()
 			indicator.visibility = Visibility.INHERIT
 		
 			local pos = player:GetWorldPosition()
-			indicator.x = (pos.x - boundsLeft) * scaleX
-			indicator.y = (pos.y - boundsTop) * scaleY
+			indicator.x = (pos.x) * scaleX
+			indicator.y = (pos.y) * scaleY
 		else
 			indicator.visibility = Visibility.FORCE_OFF
 		end
@@ -201,7 +206,6 @@ function GetIndicatorForPlayer(player)
 	player.clientUserData.minimap = minimapPlayer
 	return minimapPlayer
 end
-
 
 function GetBounds()
 	return boundsWidth, boundsHeight, boundsLeft, boundsRight, boundsTop, boundsBottom, boundsHigh, boundsLow
