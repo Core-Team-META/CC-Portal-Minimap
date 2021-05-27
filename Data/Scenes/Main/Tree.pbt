@@ -20,6 +20,9 @@ Objects {
   ChildIds: 10005074784157121906
   ChildIds: 14982843161775482339
   ChildIds: 2347622431939269791
+  ChildIds: 13770559770103010304
+  ChildIds: 5215774569983294467
+  ChildIds: 10248570245122165429
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -32,6 +35,146 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 10248570245122165429
+  Name: "MinimapPiece"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3186935525189053341
+      value {
+        Overrides {
+          Name: "Name"
+          String: "MinimapPiece"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: 765
+            Y: 25
+            Z: 10
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 11711725945891670219
+    }
+  }
+}
+Objects {
+  Id: 5215774569983294467
+  Name: "Fantasy Castle Accessory Roof 02"
+  Transform {
+    Location {
+      X: 1886.41772
+      Y: 4608.32715
+      Z: 0.0009765625
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 2318906413348686768
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 13770559770103010304
+  Name: "Castle Tower - 4xTiles High"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9533527241061534959
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Castle Tower - 4xTiles High"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -1749.14563
+            Y: -4388.37256
+            Z: 0.0009765625
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 0.337469757
+            Y: 0.337469757
+            Z: 0.337469757
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1593604699280121341
+    }
   }
 }
 Objects {
@@ -77,12 +220,18 @@ Objects {
     }
     Scale {
       X: 50
-      Y: 50
+      Y: 108.820732
       Z: 1
     }
   }
   ParentId: 4781671109827199097
   UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 8245477163061258421
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -651,6 +800,7 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
+      X: -1715
       Z: 115
     }
     Rotation {

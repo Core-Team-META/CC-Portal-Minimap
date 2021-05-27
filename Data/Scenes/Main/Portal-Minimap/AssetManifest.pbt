@@ -16,3 +16,12 @@ Assets {
     AssetId: "sm_plane_1m_001"
   }
 }
+Assets {
+  Id: 3383784291228064846
+  Name: "Frame Outline Thin 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameOutline_020"
+  }
+}

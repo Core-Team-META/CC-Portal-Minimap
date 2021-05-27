@@ -47,7 +47,6 @@ local boundsLow = nil
 
 
 
-
 for _,shape in ipairs(worldShapes) do
 	--shape.isEnabled = false 
 	
@@ -101,8 +100,8 @@ function AddForShape(shape)
 	
 	local mapPiece = World.SpawnAsset(MAP_PIECE_TEMPLATE, {parent = MAP_PANEL})
 	
-	mapPiece.x = (pos.x - boundsLeft) * scaleX
-	mapPiece.y = (pos.y - boundsTop) * scaleY
+	mapPiece.x = ((pos.x - boundsLeft) * scaleX) --+ (MAP_PANEL.width/2)
+	mapPiece.y = ((pos.y - boundsTop) * scaleY) --+ (MAP_PANEL.height/2)
 	local w = size.x * scaleX
 	local h = size.y * scaleY
 	mapPiece.width = CoreMath.Round(w)
@@ -154,7 +153,8 @@ if ENABLE_LABELS then
 
 		label.x = (pos.x - boundsLeft) * scaleX
 		label.y = (pos.y - boundsTop) * scaleY
-		
+		label.rotationAngle = ROTATION_ANGLE * -1
+
 		label.fontSize = size.z * scaleLabels
 		
 		label.text = text.text
@@ -189,6 +189,7 @@ function GetIndicatorForPlayer(player)
 		if (not player.clientUserData.minimapScript) then
 			local minimapScript = player.clientUserData.minimap:FindDescendantByType("Script")
 			if minimapScript and minimapScript.context then
+				minimapScript.context.rotationOffset = ROTATION_ANGLE
 				minimapScript.context.SetPlayer(player)
 				player.clientUserData.minimapScript = minimapScript
 			end

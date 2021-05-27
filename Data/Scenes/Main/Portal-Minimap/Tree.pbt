@@ -227,7 +227,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:IsDevMode"
-      Bool: true
+      Bool: false
     }
     Overrides {
       Name: "cs:ScaleMultiplier"
@@ -507,6 +507,7 @@ Objects {
     }
   }
   ParentId: 10751131997027176897
+  ChildIds: 9821840035017938934
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -543,6 +544,78 @@ Objects {
   }
 }
 Objects {
+  Id: 9821840035017938934
+  Name: "UI Image"
+  Transform {
+    Location {
+      X: 1344.06934
+      Y: 9864.88184
+      Z: -5620
+    }
+    Rotation {
+      Yaw: 90.0000076
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16857789138200289770
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 200
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 3383784291228064846
+      }
+      Color {
+        R: 0.187142983
+        G: 0.786
+        A: 1
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
   Id: 4128134272904798547
   Name: "3D"
   Transform {
@@ -557,7 +630,9 @@ Objects {
     }
   }
   ParentId: 17624674276828672061
+  ChildIds: 2917400432279803725
   ChildIds: 11632359337960696180
+  ChildIds: 10179519834451388002
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -572,19 +647,71 @@ Objects {
   }
 }
 Objects {
+  Id: 10179519834451388002
+  Name: "World Text"
+  Transform {
+    Location {
+      X: 1870
+      Y: 4545
+      Z: 218.174103
+    }
+    Rotation {
+      Pitch: 90
+      Yaw: 4.55345935e-06
+      Roll: -179.999969
+    }
+    Scale {
+      X: 46.3999863
+      Y: 46.3999863
+      Z: 46.3999863
+    }
+  }
+  ParentId: 4128134272904798547
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Text {
+    Text: "B"
+    FontAsset {
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
+    }
+  }
+}
+Objects {
   Id: 11632359337960696180
   Name: "Plane 1m"
   Transform {
     Location {
-      Y: -39025
-      Z: 476
+      Z: 11.9101563
     }
     Rotation {
     }
     Scale {
-      X: 276.5
-      Y: 453.500031
-      Z: 5.5
+      X: 50
+      Y: 108.820732
+      Z: 1
     }
   }
   ParentId: 4128134272904798547
@@ -621,6 +748,58 @@ Objects {
       Physics {
       }
       BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 2917400432279803725
+  Name: "World Text"
+  Transform {
+    Location {
+      X: -1805
+      Y: -4390
+      Z: 218.174103
+    }
+    Rotation {
+      Pitch: 90
+      Roll: 180
+    }
+    Scale {
+      X: 46.3999863
+      Y: 46.3999863
+      Z: 46.3999863
+    }
+  }
+  ParentId: 4128134272904798547
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Text {
+    Text: "A"
+    FontAsset {
+    }
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    HorizontalSize: 1
+    VerticalSize: 1
+    HorizontalAlignment {
+      Value: "mc:ecoretexthorizontalalign:center"
+    }
+    VerticalAlignment {
+      Value: "mc:ecoretextverticalalign:center"
     }
   }
 }
@@ -702,11 +881,11 @@ Objects {
     }
     Overrides {
       Name: "cs:EnableLabels"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "cs:RotationAngle"
-      Float: 0
+      Float: -90
     }
     Overrides {
       Name: "cs:GradientHeight:tooltip"

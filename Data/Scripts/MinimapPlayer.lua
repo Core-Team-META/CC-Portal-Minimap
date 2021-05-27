@@ -11,6 +11,7 @@ ROOT.visibility = Visibility.FORCE_OFF
 
 local myPlayer = nil
 local initialized = false
+rotationOffset = 0
 
 function SetPlayer(player)
 	myPlayer = player
@@ -21,8 +22,9 @@ function SetPlayer(player)
 	CIRCLE_BG.isEnabled = (player == Game.GetLocalPlayer())
 	
 	-- Set player's initial name letter
-	NAME.text = string.sub(player.name, 1, 1)
-	
+	NAME.text = "M" --string.sub(player.name, 1, 1) #FIXME
+	CIRCLE.rotationAngle = rotationOffset * -1
+
 	UpdateContent()
 end
 
