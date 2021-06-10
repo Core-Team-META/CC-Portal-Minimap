@@ -1,16 +1,48 @@
+--[[
+Copyright 2021 Manticore Games, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+--]]
+
+------------------------------------------------------------------------------------------------------------------------
+-- Minimap Image Client
+-- Author Morticai (META) - (https://www.coregames.com/user/d1073dbcc404405cbef8ce728e53d380)
+-- Date: 2021/6/10
+-- Version 0.0.1
+------------------------------------------------------------------------------------------------------------------------
+-- OBJECTS
+------------------------------------------------------------------------------------------------------------------------
+
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 local ROOT = script:GetCustomProperty("MinimapSetup"):WaitForObject()
+local UIContainer = script:GetCustomProperty("UIContainer"):WaitForObject()
+local Minimap = script:GetCustomProperty("Minimap"):WaitForObject()
+local SCREENSHOT_CAMERA = script:GetCustomProperty("Camera"):WaitForObject()
+local ObjectGroup = script:GetCustomProperty("3D"):WaitForObject()
+
+------------------------------------------------------------------------------------------------------------------------
+-- CUSTOM PROPERTIES
+------------------------------------------------------------------------------------------------------------------------
+
 local isDevMode = ROOT:GetCustomProperty("IsDevMode")
 local enterCameraMode = ROOT:GetCustomProperty("CameraModeKeybind")
 local zoomCameraOut = ROOT:GetCustomProperty("CameraZoomOutKeybind")
 local zoomCameraIn = ROOT:GetCustomProperty("CameraZoomInKeybind")
 local hideMapObject = ROOT:GetCustomProperty("HideMapObjectKeybind")
 
-local UIContainer = script:GetCustomProperty("UIContainer"):WaitForObject()
-local Minimap = script:GetCustomProperty("Minimap"):WaitForObject()
-local SCREENSHOT_CAMERA = script:GetCustomProperty("Camera"):WaitForObject()
-local ObjectGroup = script:GetCustomProperty("3D"):WaitForObject()
-
-local LOCAL_PLAYER = Game.GetLocalPlayer()
+------------------------------------------------------------------------------------------------------------------------
+-- GLOBAL FUNCTIONS
+------------------------------------------------------------------------------------------------------------------------
 
 if isDevMode then
     while not Minimap.context.GetBounds do

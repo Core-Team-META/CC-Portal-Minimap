@@ -19,7 +19,8 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 10005074784157121906
   ChildIds: 14982843161775482339
-  ChildIds: 2347622431939269791
+  ChildIds: 1280845339199833804
+  ChildIds: 4306207500225917334
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -35,8 +36,40 @@ Objects {
   }
 }
 Objects {
-  Id: 2347622431939269791
+  Id: 4306207500225917334
   Name: "Portal-Minimap"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 18018043346765163951
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Portal-Minimap"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 4770045997323115608
+    }
+  }
+}
+Objects {
+  Id: 1280845339199833804
+  Name: "Portal-MiniMap README"
   Transform {
     Location {
     }
@@ -61,9 +94,10 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Portal-Minimap"
+  Script {
+    ScriptAsset {
+      Id: 12438744521844256054
+    }
   }
 }
 Objects {

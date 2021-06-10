@@ -1831,5 +1831,5 @@ Assets {
       AssetId: "Castle_Tower_-_4xTiles_High"
     }
   }
-  SerializationVersion: 85
+  SerializationVersion: 87
 }

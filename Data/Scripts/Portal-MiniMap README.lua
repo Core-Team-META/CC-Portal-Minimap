@@ -8,12 +8,12 @@
       Ooccoo (META) (https://www.coregames.com/user/a136c0d1d9454d539c9932354198fc29)
       Divided (META) (https://www.coregames.com/user/eaba4947069846dbb72fc5efb0f04f47)
       blaking707 (META) (https://www.coregames.com/user/0ea6612ceab7456a8a3a963a94808295)
-      Chris (META) (https://www.coregames.com/user/d97586e1f850481da13ee26d5cbddc02) 
+      Chris (Manticore) (https://www.coregames.com/user/d97586e1f850481da13ee26d5cbddc02) 
       Waffle (Manticore) (https://www.coregames.com/user/581ff579fd864966aec56450754db1fb)
 
    Description:
    ============
-      Meta Portal Minimap is a ... #FIXME
+      Meta Portal Minimap is a component that allows creators to place high-quailty screenshots as a minimap backdrop, through the use of portals.
 
 
    Getting an Image
