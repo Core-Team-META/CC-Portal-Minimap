@@ -53,6 +53,9 @@ if #worldShapes <= 0 then
 	return
 end
 
+local X_Offset = 0
+local Y_Offset = 0
+
 -- Establish 3D bounds
 local boundsLeft = nil
 local boundsRight = nil
@@ -121,8 +124,11 @@ function AddForShape(shape)
 	
 	local mapPiece = World.SpawnAsset(MAP_PIECE_TEMPLATE, {parent = MAP_PANEL})
 	
-	mapPiece.x = ((pos.x) * scaleX) --+ (MAP_PANEL.width/2)
-	mapPiece.y = ((pos.y) * scaleY) --+ (MAP_PANEL.height/2)
+	mapPiece.x = 0 --((pos.x) * scaleX) --+ (MAP_PANEL.width/2)
+	mapPiece.y = 0 --((pos.y) * scaleY) --+ (MAP_PANEL.height/2)
+	X_Offset = (pos.x) * scaleX
+	Y_Offset = (pos.y) * scaleY
+
 	local w = size.x * scaleX
 	local h = size.y * scaleY
 	mapPiece.width = CoreMath.Round(w)
@@ -172,8 +178,8 @@ if ENABLE_LABELS then
 		
 		label.anchor = UIPivot.BOTTOM_CENTER
 
-		label.x = (pos.x) * scaleX
-		label.y = (pos.y) * scaleY
+		label.x = (pos.x * scaleX) - X_Offset
+		label.y = (pos.y * scaleY) - Y_Offset
 		label.rotationAngle = ROTATION_ANGLE * -1
 
 		label.fontSize = size.z * scaleLabels
@@ -195,8 +201,8 @@ function Tick()
 			indicator.visibility = Visibility.INHERIT
 		
 			local pos = player:GetWorldPosition()
-			indicator.x = (pos.x) * scaleX
-			indicator.y = (pos.y) * scaleY
+			indicator.x = (pos.x * scaleX) - X_Offset
+			indicator.y = (pos.y * scaleY) - Y_Offset
 		else
 			indicator.visibility = Visibility.FORCE_OFF
 		end
